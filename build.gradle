@@ -15,7 +15,10 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
+
 apply plugin: 'kotlin'
+defaultTasks 'run'
+
 compileKotlin {
     kotlinOptions {
         jvmTarget = "1.8"
@@ -31,7 +34,12 @@ dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     compile 'com.google.guava:guava:23.0'
     compile 'org.koin:koin-core:0.9.1'
-
+    compile 'io.grpc:grpc-netty:1.10.0'
+    compile 'io.grpc:grpc-protobuf:1.10.0'
+    compile 'io.grpc:grpc-stub:1.10.0'
+    compile 'io.github.microutils:kotlin-logging:1.4.9'
+    compile 'org.slf4j:slf4j-simple:1.7.5'
+    
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
